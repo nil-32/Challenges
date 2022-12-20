@@ -9,24 +9,17 @@ int lengthOfLongestSubstring(char * s){
     int count = 0;
     int flag = 0;
     int len = strlen(s);
-    for(i=0;i<len;i++){
-        for(j=i;j<len;j++){
-            for(k=i;k<j;k++){
-                if(s[k] == s[j]){
-                    flag = 1;
-                    break;
-                }
-            }
-            if(flag == 1){
-                flag = 0;
-                break;
-            }
-            count++;
+    k=0;
+    for(i=0;i<=len;i++){
+       if(s[i]==' '||i==len)
+        {
+                count=i-k;
+                k=i+1;
+
         }
         if(count > max){
             max = count;
         }
-        count = 0;
     }
     return max;
 }
