@@ -4,7 +4,7 @@
 #include "stdio.h"
 
 int lengthOfLongestSubstring(char * s){ 
-    int i,j,k;
+    int i,k;
     int max = 0;
     int count = 0;
     int flag = 0;
