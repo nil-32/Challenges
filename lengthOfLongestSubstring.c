@@ -4,25 +4,20 @@
 #include "stdio.h"
 
 int lengthOfLongestSubstring(char * s){ 
-    int i,j,k;
+    int i,k=0;
     int max = 0;
     int count = 0;
     int flag = 0;
     int len = strlen(s);
-    for(i=0;i<len;i++){
-        for(j=i;j<len;j++){
-            for(k=i;k<j;k++){
-                if(s[k] == s[j]){
-                    flag = 1;
-                    break;
-                }
-            }
-            if(flag == 1){
-                flag = 0;
-                break;
-            }
-            count++;
+    for(i=0;i<=len;i++){
+       
+        if(s[i]==' '||i==len)
+        {
+                count=i-k;
+                k=i+1;
+
         }
+         
         if(count > max){
             max = count;
         }
